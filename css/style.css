@@ -4,21 +4,28 @@
     box-sizing: border-box;
 }
 
-.container{
+.container {
     height: calc(100vh - 40px);
+}
+
+.main-box {
+    height: 90%;
 }
 
 .window {
     display: flex;
     margin-top: 20px;
     height: 100%;
-    margin-bottom: 20px;
     background-color: aquamarine;
+    overflow: hidden;
 }
 
 aside {
     width: 400px;
+    height: 100%;
 }
+
+
 
 /* *********************
      MY PROFILE
@@ -33,7 +40,7 @@ aside {
     justify-content: space-between;
 }
 
-.profile span{
+.profile span {
     font-size: 0.7rem;
     font-weight: 600;
     padding-left: 5px;
@@ -55,7 +62,7 @@ aside {
     padding-right: 15px;
 }
 
-.profile ul li{
+.profile ul li {
     padding-left: 10px;
     color: #B1B1B1;
 }
@@ -99,7 +106,7 @@ aside {
 
 
 /* ***************************
-          SEARCH
+           SEARCH
 *************************** */
 
 .search {
@@ -129,7 +136,7 @@ aside {
 
 
 /* ****************************
-          CONTACTS
+           CONTACTS
 **************************** */
 
 .contacts {
@@ -187,4 +194,121 @@ aside {
     margin-top: -18px;
     margin-right: 5px;
     color: #B7BCBF ;
+}
+
+
+/* *********************
+         ASIDE 
+********************* */
+
+
+
+/* *************************
+          MAIN
+************************* */
+
+main {
+    width: 100%;
+}
+
+
+
+/* ***************************
+          CONTACT PROFILE 
+*************************** */
+
+.profile-contact{
+    height: 50px;
+    display: flex;
+    background-color: #EAEAEA;
+    align-items: center;
+    border-left: 1px solid lightgray;
+    justify-content: space-between;
+}   
+
+.contact-info {
+    display: flex;
+}
+
+.profile-contact img {
+    height: 40px;
+    width: 40px;
+    border-radius: 20px;
+    margin-left: 5px;
+    margin-top: 10px;
+}
+
+.detail-profileContact {
+    margin-top: 12px;
+    margin-left: 5px;
+}
+
+.detail-profileContact span {
+    font-size: 0.8rem;
+    font-weight: 600;
+    
+}
+
+.detail-profileContact p {
+    font-size: 0.6rem;
+    color: #B7BCBF;
+    margin-top: -5px;
+}
+
+.setting-icons {
+    list-style: none;
+    display: flex;
+    margin-bottom: 0;
+}
+
+.setting-icons li {
+    margin-right: 10px;
+    float: right;
+    color: #B1B1B1;
+}
+
+
+/* **************************
+        MESSAGE BOX 
+************************** */
+
+.message-box {
+    background-image: url(../img/mine.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 81%;
+}
+    
+
+/* ***************************
+        TYPE BAR
+*************************** */
+
+.type-bar {
+    height: 50px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #F3EEEA;
+}
+
+.type-bar input{
+    height: 30px;
+    display: flex;
+    width: 100%;
+    border: none;
+    padding: 10px;
+    border-radius: 3px;
+}
+
+.emojis{
+    padding-left: 20px;
+    padding-right: 20px;
+    color: #6B7376;
+}
+
+.audio{
+    padding-left: 20px;
+    padding-right: 20px;
+    color: #6B7376;
 }
