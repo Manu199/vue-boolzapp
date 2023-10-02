@@ -1,0 +1,190 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.container{
+    height: calc(100vh - 40px);
+}
+
+.window {
+    display: flex;
+    margin-top: 20px;
+    height: 100%;
+    margin-bottom: 20px;
+    background-color: aquamarine;
+}
+
+aside {
+    width: 400px;
+}
+
+/* *********************
+     MY PROFILE
+********************* */
+
+.profile {
+    height: 50px;
+    background-color: #EAEAEA;
+    display: flex;
+    align-items: center;
+    width: 100%;
+    justify-content: space-between;
+}
+
+.profile span{
+    font-size: 0.7rem;
+    font-weight: 600;
+    padding-left: 5px;
+}
+
+.profile img {
+    width: 40px;
+    height: 40px;
+    border-radius: 20px;
+    margin-left: 6px;
+}
+
+.profile ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 0;
+    padding-right: 15px;
+}
+
+.profile ul li{
+    padding-left: 10px;
+    color: #B1B1B1;
+}
+
+
+/* *************************
+        SUGGESTION
+************************* */
+
+.suggestion {
+    display: flex;
+    background-color: #8EDAFC;
+    align-items: center;
+    height: 60px;
+}
+
+.suggestion-icon i {
+    padding: 13px 11px;
+    background-color: white;
+    margin-left: 15px;
+    border-radius: 25px;
+    color: #8EDAFC;
+}
+
+.suggestion-text span {
+    font-size: .8rem;
+    margin-left: 10px;
+    font-weight: 600;
+}
+
+.suggestion-text p {
+    margin-bottom: 2px;
+    font-size: .7rem;
+    margin-left: 10px;
+    margin-top: -4px;
+}
+
+.suggestion-text p a{
+    color: rgb(131, 131, 131);
+}
+
+
+/* ***************************
+          SEARCH
+*************************** */
+
+.search {
+    height: 45px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #FAFAFA;
+}
+
+.search span {
+    padding:  2px 30px 2px 30px;
+    color: #B1B1B1;
+    background-color: white;
+    border: 1px solid rgb(238, 238, 238);
+    margin-left: 10px;
+}
+
+.search input {
+    width: 100%;
+    margin-right: 10px;
+    border: 1px rgb(238, 238, 238);
+    border-style: solid solid solid none;
+    padding-top: 2px;
+    padding-bottom: 2px;
+}
+
+
+/* ****************************
+          CONTACTS
+**************************** */
+
+.contacts {
+    height: 79.1%;
+    overflow-y: scroll;
+    width: 100%;
+    background-color: white;
+}
+
+.contacts ul{
+    /* width: 100%; */
+    list-style: none;
+    margin-left: -32px;
+}
+
+.contact img {
+    width: 40px;
+    height: 40px;
+    border-radius: 20px;
+    margin-left: 15px;
+}
+
+.contact {
+    display: flex;
+    height: 60px;
+    /* width: 100px; */
+    align-items: center;
+    cursor: pointer;
+    border-top: 1px solid rgb(241, 239, 239);
+    width: 100%;
+}
+
+.contact:hover {
+    background-color: #E9EBEB;
+}
+
+.detail-contact {
+    margin-left: 15px;
+    width: 80%;
+}
+
+.detail-contact span {
+    font-size: 0.8rem;
+    font-weight: 600;
+}
+
+.contact .detail-contact p {
+    font-size: 0.6rem;
+    color: #B7BCBF;
+    margin-top: -4px;
+}
+
+.contact p {
+    font-size: 0.6rem;
+    margin-top: -18px;
+    margin-right: 5px;
+    color: #B7BCBF ;
+}
