@@ -9,7 +9,7 @@
 }
 
 .main-box {
-    height: 90%;
+    height: 100%;
 }
 
 .window {
@@ -17,11 +17,11 @@
     margin-top: 20px;
     height: 100%;
     background-color: aquamarine;
-    overflow: hidden;
+    /* overflow: hidden; */
 }
 
 aside {
-    width: 400px;
+    max-width: 350px;
     height: 100%;
 }
 
@@ -140,7 +140,7 @@ aside {
 **************************** */
 
 .contacts {
-    height: 79.1%;
+    height: calc(100% - 155px);
     overflow-y: scroll;
     width: 100%;
     background-color: white;
@@ -209,6 +209,11 @@ aside {
 
 main {
     width: 100%;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    justify-content: space-between;
+
 }
 
 
@@ -276,9 +281,38 @@ main {
     background-image: url(../img/mine.jpg);
     background-size: cover;
     background-repeat: no-repeat;
-    height: 81%;
+    height: calc(100% - 100px);
+    overflow-y: scroll;
 }
     
+.message {
+    display: flex;
+    width: 100%;
+
+}
+
+.message-content {
+    display: flex;
+}
+
+.sent {
+    background-color: #D5F9BA;
+    color: black; 
+    align-self: flex-end; 
+    margin: 10px 10px;
+    border-radius: 10px;
+    padding: 20px 30px;
+}
+
+
+.message .received {
+    background-color: #FFFFFF;
+    color: black;
+    align-self: flex-start;
+    margin: 5px 10px;
+    border-radius: 10px;
+    padding: 20px 30px;
+}
 
 /* ***************************
         TYPE BAR
@@ -305,10 +339,13 @@ main {
     padding-left: 20px;
     padding-right: 20px;
     color: #6B7376;
+    cursor: pointer;
 }
 
 .audio{
     padding-left: 20px;
     padding-right: 20px;
     color: #6B7376;
+    cursor: pointer;
+
 }

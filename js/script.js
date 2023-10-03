@@ -1,13 +1,13 @@
 const { createApp } = Vue;
 
-createAppp({
+createApp({
     data(){
         return{
-            
+
             contacts: [
                 {
                     name: 'Michele',
-                    avatar: './img/avatar_1.png',
+                    avatar: './img/avatar_1.jpg',
                     visible: true,
                     messages: [
                         {
@@ -29,7 +29,7 @@ createAppp({
                 },
                 {
                     name: 'Fabio',
-                    avatar: './img/avatar_2.png',
+                    avatar: './img/avatar_2.jpg',
                     visible: true,
                     messages: [
                         {
@@ -51,7 +51,7 @@ createAppp({
                 },
                 {
                     name: 'Samuele',
-                    avatar: './img/avatar_3.png',
+                    avatar: './img/avatar_3.jpg',
                     visible: true,
                     messages: [
                         {
@@ -73,7 +73,7 @@ createAppp({
                 },
                 {
                     name: 'Alessandro B.',
-                    avatar: './img/avatar_4.png',
+                    avatar: './img/avatar_4.jpg',
                     visible: true,
                     messages: [
                         {
@@ -90,7 +90,7 @@ createAppp({
                 },
                 {
                     name: 'Alessandro L.',
-                    avatar: './img/avatar_5.png',
+                    avatar: './img/avatar_5.jpg',
                     visible: true,
                     messages: [
                         {
@@ -107,7 +107,7 @@ createAppp({
                 },
                 {
                     name: 'Claudia',
-                    avatar: './img/avatar_6.png',
+                    avatar: './img/avatar_6.jpg',
                     visible: true,
                     messages: [
                         {
@@ -129,7 +129,7 @@ createAppp({
                 },
                 {
                     name: 'Federico',
-                    avatar: './img/avatar_7.png',
+                    avatar: './img/avatar_7.jpg',
                     visible: true,
                     messages: [
                         {
@@ -146,7 +146,7 @@ createAppp({
                 },
                 {
                     name: 'Davide',
-                    avatar: './img/avatar_8.png',
+                    avatar: './img/avatar_8.jpg',
                     visible: true,
                     messages: [
                         {
@@ -165,9 +165,67 @@ createAppp({
                             status: 'received'
                         }
                     ],
-                }
-            ]
+                },
+            ],
+            selectedContact: null, 
+            newMessage: '',
             
+        };
+        
+    },
+    
+    created() {
+        if (this.contacts.length > 0) {
+            this.selectedContact = this.contacts[0];
         }
-    }
-})
+    },
+
+    computed: {
+        lastMessageDates() {
+            return this.contacts.map(contact => {
+                if (contact.messages.length > 0) {
+                    const lastMessage = contact.messages[contact.messages.length - 1];
+                    return lastMessage.date;
+                }
+                return '';
+            });
+        },
+    },
+
+    methods: {
+
+        selectContact(contact) {
+            this.selectedContact = contact;
+        },
+        
+        getLastMessage(contact) {
+            const lastMessage = contact.messages[contact.messages.length - 1];
+            return lastMessage ? lastMessage.message : '';
+        },
+
+        sendMessage() {
+            if (this.newMessage.trim() !== '' && this.selectedContact) {
+                const currentDate = new Date().toLocaleString();
+                this.selectedContact.messages.push({
+                    date: currentDate,
+                    message: this.newMessage,
+                    status: 'sent',
+                });
+
+                // Clear the input field after sending the message
+                this.newMessage = '';
+
+                // Simulate a received message after a brief delay (adjust as needed)
+                setTimeout(() => {
+                    const receivedDate = new Date().toLocaleString();
+                    this.selectedContact.messages.push({
+                        date: receivedDate,
+                        message: 'OK!',
+                        status: 'received',
+                    });
+                }, 3000); // Delay in milliseconds, adjust as needed
+            }
+        },
+    },
+    // 
+}).mount('#app');
