@@ -1,3 +1,5 @@
+const dt = luxon.DateTime;
+
 const { createApp } = Vue;
 
 createApp({
@@ -169,7 +171,7 @@ createApp({
             ],
             selectedContact: null, 
             newMessage: '',
-            
+            currentTime: '',
         };
         
     },
@@ -193,6 +195,11 @@ createApp({
     },
 
     methods: {
+
+        printClock() {
+            this.currentTime = dt.now().setLocale('it').toLocaleString(dt.DATETIME_WITH_SHORT_SECONDS);
+        },
+
 
         selectContact(contact) {
             this.selectedContact = contact;
@@ -227,5 +234,12 @@ createApp({
             }
         },
     },
-    // 
+
+    mounted(){
+        this.printClock()
+        setInterval(()=>{
+            this.printClock();
+        }, 1000);
+    }
+
 }).mount('#app');
