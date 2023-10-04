@@ -225,10 +225,9 @@ createApp({
                     status: 'sent',
                 });
 
-                // Clear the input field after sending the message
+                
                 this.newMessage = '';
 
-                // Simulate a received message after a brief delay (adjust as needed)
                 setTimeout(() => {
                     const receivedDate = new Date().toLocaleString();
                     this.selectedContact.messages.push({
@@ -236,7 +235,7 @@ createApp({
                         message: 'OK!',
                         status: 'received',
                     });
-                }, 3000); // Delay in milliseconds, adjust as needed
+                }, 3000); 
             }
         },
 
@@ -245,13 +244,10 @@ createApp({
         },
     
         deleteMessage(message) {
-            // Trova l'indice del messaggio nell'array dei messaggi del contatto
             const index = this.selectedContact.messages.indexOf(message);
             if (index !== -1) {
-                // Rimuovi il messaggio dall'array
                 this.selectedContact.messages.splice(index, 1);
             }
-            // Chiudi il menu a tendina
             this.selectedMessage = null;
         },
     
