@@ -41,12 +41,12 @@
                     </div>
                     <div class="search">
                         <span><i class="fa-solid fa-magnifying-glass"></i></span>
-                        <input type="text">
+                        <input type="text" v-model="searchText" placeholder="Cerca contatti">
                     </div>
                     <div class="contacts">
                         <ul>
                             
-                            <li class="contact" v-for="contact in contacts" :key="contact.name" @click="selectContact(contact)">
+                            <li class="contact" v-for="contact in filteredContacts" :key="contact.name" @click="selectContact(contact)">
                                 <img :src="contact.avatar" alt=""> 
                                 <div class="detail-contact" >
                                     <span class="contactName">{{ contact.name  }}</span>
@@ -85,7 +85,7 @@
                                         :class="{ 'sent': message.status === 'sent', 'received': message.status === 'received' }"
                                     >
                                         {{ message.message }}
-                                        <div class="message-options"><i class="fa-solid fa-chevron-down"></i></div>
+                                        <div class="message-options" @click="showDeleteMenu(message) "><i class="fa-solid fa-chevron-down"></i></div>
                                         <div class="message-time">{{ message.date }}</div>
                                     </div>
 

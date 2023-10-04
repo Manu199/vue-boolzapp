@@ -172,6 +172,7 @@ createApp({
             selectedContact: null, 
             newMessage: '',
             currentTime: '',
+            searchText: '',
         };
         
     },
@@ -191,6 +192,11 @@ createApp({
                 }
                 return '';
             });
+        },
+
+        filteredContacts() {
+            const searchText = this.searchText.toLowerCase();
+            return this.contacts.filter(contact => contact.name.toLowerCase().includes(searchText));
         },
     },
 
@@ -233,6 +239,22 @@ createApp({
                 }, 3000); // Delay in milliseconds, adjust as needed
             }
         },
+
+        showDeleteMenu(message) {
+            this.selectedMessage = message;
+        },
+    
+        deleteMessage(message) {
+            // Trova l'indice del messaggio nell'array dei messaggi del contatto
+            const index = this.selectedContact.messages.indexOf(message);
+            if (index !== -1) {
+                // Rimuovi il messaggio dall'array
+                this.selectedContact.messages.splice(index, 1);
+            }
+            // Chiudi il menu a tendina
+            this.selectedMessage = null;
+        },
+    
     },
 
     mounted(){
